@@ -5,16 +5,18 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@RequiredArgsConstructor
 public class Position {
 
     protected static final Integer INF = Integer.MAX_VALUE;
 
-    @NonNull
     private int x;
-    @NonNull
     private int y;
     private Integer move;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
     @Override
     public boolean equals(Object obj) {
