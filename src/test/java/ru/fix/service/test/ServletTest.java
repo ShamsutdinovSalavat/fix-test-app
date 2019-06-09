@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 public class ServletTest {
 
     private final String BAD_REQUEST = "/horse/servlet/count?width=0&height=14&start=B1";
-    private final String CORRECT_REQUEST = "/horse/servlet/count?width=10&height=14&start=B1&end=A3";
+    private final String CORRECT_REQUEST = "/horse/servlet/count?width=10&height=14&start=C1&end=A3";
 
     @LocalServerPort
     private int port;
@@ -41,4 +41,13 @@ public class ServletTest {
 
         assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
     }
+
+    @Test
+    public void shouldReturnValue() {
+        ResponseEntity<String> responseEntity =
+                restTemplate.getForEntity("http://localhost:" + port + CORRECT_REQUEST, String.class);
+
+        assertEquals(String.valueOf(4), responseEntity.getBody());
+    }
+
 }

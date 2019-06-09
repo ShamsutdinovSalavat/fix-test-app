@@ -58,10 +58,10 @@ public class HorseMoveServlet extends HttpServlet {
                 Integer value = horseMoveService.getValue(parametersDto);
                 sendValue(response, value);
             } else {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Wrong parameters");
             }
         } catch (IllegalArgumentException exc) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Wrong parameters");
         }
     }
 
