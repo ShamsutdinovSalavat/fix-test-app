@@ -11,6 +11,9 @@
 
     <modules>
         <module>algorithm-app</module>
+        <module>algorithm-config</module>
+        <module>algorithm-api</module>
+        <module>algorithm-impl</module>
     </modules>
 
     <description>Demo project for Spring Boot</description>
@@ -31,6 +34,21 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>ru.fix</groupId>
+                <artifactId>algorithm-config</artifactId>
+                <version>0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.fix</groupId>
+                <artifactId>algorithm-api</artifactId>
+                <version>0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.fix</groupId>
+                <artifactId>algorithm-impl</artifactId>
+                <version>0.1</version>
+            </dependency>
             <dependency>
                 <groupId>ru.fix</groupId>
                 <artifactId>algorithm-app</artifactId>
